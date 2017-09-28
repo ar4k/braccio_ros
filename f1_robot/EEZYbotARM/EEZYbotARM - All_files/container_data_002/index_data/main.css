@@ -1,0 +1,105 @@
+body{
+	margin:0px;
+	background-color:#fff;
+    background-repeat: no-repeat;
+}
+p{
+	padding:0px;
+	margin:0px;
+}
+div{
+	padding:0px;
+	margin:0px;
+}
+#main{
+	width:300px;
+	height:600px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color:#fff;
+	overflow:hidden;
+    -webkit-transform-style: preserve-3d;
+    background-color: black;
+}
+#border{
+	position:absolute;
+	width:298px;
+	height:598px;
+	border:1px #000 solid;
+}
+#logo{
+	position:absolute;
+	width: 300px;
+    height: 600px;
+    background: url("logo.jpg") no-repeat;
+    background-position: bottom right;
+    left: -10px;
+    top:-10px;
+}
+#asset{
+    position:absolute;
+	width: 300px;
+    height: 600px;
+}
+
+#line1, #line2, #line3{
+	position:absolute;
+	top:20px;
+	left:30px;
+    width: 275px;
+	font-size:15px;
+	font-weight: bold;
+	text-align: left;
+	opacity:0;
+}
+#cta-btn{
+	left:10px;
+	position:absolute;
+	font-weight:bold;
+	font-size:14px;
+	color:#ffffff;
+    margin-right: 10px;
+	cursor:pointer;
+	opacity:0;
+	top: 445px;
+}
+#cta-btn div{
+    background-color:#78B23F;
+	padding:.4em .5em .4em .5em;
+	background-repeat:no-repeat;
+	background-position:right center;
+}
+#cta-btn:hover{
+	background-color:#608e32;
+}
+#legal{
+	position:absolute;
+	top:20px;
+	left:10px;
+	width:275px;
+	opacity:0;
+	font-size:12px;
+	font-weight: bold;
+	text-align: left;
+	font-weight:normal;
+}
+#disclaimer{
+	position:absolute;
+	width:275px;
+	left:10px;
+	top:0px;
+	opacity:0;
+	font-weight: bold;
+	font-size:12px;
+	font-weight:normal;
+	text-align: left;
+}
+#bg-exit {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    cursor: pointer;
+    opacity: 0;
+}

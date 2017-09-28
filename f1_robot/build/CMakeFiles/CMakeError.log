@@ -1,0 +1,53 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/rossonet/catkin_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec730501029/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec730501029.dir/build.make CMakeFiles/cmTryCompileExec730501029.dir/build
+make[1]: ingresso nella directory "/home/rossonet/catkin_ws/build/CMakeFiles/CMakeTmp"
+/usr/bin/cmake -E cmake_progress_report /home/rossonet/catkin_ws/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec730501029.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec730501029.dir/CheckSymbolExists.c.o   -c /home/rossonet/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec730501029
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec730501029.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec730501029.dir/CheckSymbolExists.c.o  -o cmTryCompileExec730501029 -rdynamic 
+CMakeFiles/cmTryCompileExec730501029.dir/CheckSymbolExists.c.o: nella funzione "main":
+CheckSymbolExists.c:(.text+0xa): riferimento non definito a "pthread_create"
+collect2: error: ld returned 1 exit status
+make[1]: uscita dalla directory "/home/rossonet/catkin_ws/build/CMakeFiles/CMakeTmp"
+make[1]: *** [cmTryCompileExec730501029] Errore 1
+make: *** [cmTryCompileExec730501029/fast] Errore 2
+
+File /home/rossonet/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/rossonet/catkin_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2532534706/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2532534706.dir/build.make CMakeFiles/cmTryCompileExec2532534706.dir/build
+make[1]: ingresso nella directory "/home/rossonet/catkin_ws/build/CMakeFiles/CMakeTmp"
+/usr/bin/cmake -E cmake_progress_report /home/rossonet/catkin_ws/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2532534706.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec2532534706.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2532534706
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2532534706.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec2532534706.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2532534706 -rdynamic -lpthreads 
+/usr/bin/ld: impossibile trovare -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: uscita dalla directory "/home/rossonet/catkin_ws/build/CMakeFiles/CMakeTmp"
+make[1]: *** [cmTryCompileExec2532534706] Errore 1
+make: *** [cmTryCompileExec2532534706/fast] Errore 2
+
+

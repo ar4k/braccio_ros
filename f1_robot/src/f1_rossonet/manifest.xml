@@ -1,0 +1,21 @@
+<package>
+  <description brief="f1_rossonet">
+
+     f1_rossonet
+
+  </description>
+  <author>rossonet</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://www.ar4k.eu</url>
+  <depend package="roscpp"/>
+  <!-- <depend package="turtlesim"/> -->
+  <depend package="joy"/>
+  <depend package="actionlib"/>
+  <depend package="actionlib_msgs"/>
+  <depend package="trajectory_msgs"/>
+  <depend package="control_msgs"/>
+
+</package>
+
+

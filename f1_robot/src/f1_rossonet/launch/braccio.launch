@@ -1,0 +1,39 @@
+<launch>
+    <node name="cam0" pkg="usb_cam" type="usb_cam_node" output="screen" >
+        <param name="video_device" value="/dev/video0" />
+        <param name="image_width" value="640" />
+        <param name="image_height" value="480" />
+        <param name="pixel_format" value="yuyv" />
+        <param name="camera_frame_id" value="usb_cam" />
+        <param name="io_method" value="mmap"/>
+    </node>
+
+    <node name="cam1" pkg="usb_cam" type="usb_cam_node" output="screen" >
+        <param name="video_device" value="/dev/video1" />
+        <param name="image_width" value="640" />
+        <param name="image_height" value="480" />
+        <param name="pixel_format" value="mjpeg" />
+        <param name="camera_frame_id" value="usb_cam" />
+        <param name="io_method" value="mmap"/>
+    </node>
+
+    <node pkg="rosserial_python" type="serial_node.py" args="/dev/ttyACM0" name="serial_node" respawn="true"/>
+
+    <node respawn="true" pkg="joy" type="joy_node" name="joypad" >
+       <param name="dev" type="string" value="/dev/input/js0" />
+       <param name="deadzone" value="0.12" />
+    </node>
+
+    <node pkg="f1_rossonet" type="braccio_controller" name="follow_joint_trajectory" ns="braccio_controller" output="screen"/>
+
+    <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" > 
+       <arg name="port" value="9090"/>
+    </include>
+
+    <include file="$(find f1_rossonet)/launch/infrastruttura.launch" /> 
+
+    <node pkg="mjpeg_server" type="mjpeg_server" name="mjpeg_server" output="screen" respawn="true">
+       <param name="port" type="int" value="9091"/>
+    </node> 
+
+</launch>
